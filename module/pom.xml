@@ -7,19 +7,12 @@
 		<groupId>com.example</groupId>
 		<artifactId>demo-module-dependency</artifactId>
 		<version>${global.version}</version>
-		<relativePath>../pom.xml</relativePath>
 	</parent>
 
 	<groupId>com.example</groupId>
 	<artifactId>module</artifactId>
-	<version>${project.parent.version}</version>
+	<version>0.0.3</version>
 	<name>module</name>
 	<description>Module, app dependency</description>
-	<properties>
-		<java.version>17</java.version>
-	</properties>
-
-	<dependencies>
-	</dependencies>
 
 </project>
