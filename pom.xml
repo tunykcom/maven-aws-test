@@ -23,6 +23,7 @@
 
     <properties>
         <global.version>0.0.1</global.version>
+        <java.version>17</java.version>
     </properties>
 
 </project>
