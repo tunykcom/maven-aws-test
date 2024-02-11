@@ -9,6 +9,11 @@ on:
     branches:
       - main
 
+permissions:
+  pull-requests: write
+  id-token: write
+  contents: read
+
 jobs:
   build:
     name: Build Main Branch
@@ -25,8 +30,10 @@ jobs:
           distribution: 'temurin'
           cache: maven
 
-    #  - name: Build with Maven
-    #    run: mvn -B package --file pom.xml
-      - name: Build Module
-#        working-directory: ./module
-        run: ./mvnw --batch-mode clean package
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: arn:aws:iam::202288643514:role/ci-role
+
+      - name: Build with Maven
+        run: mvn -B clean package
